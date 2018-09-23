@@ -23,4 +23,25 @@ class RenderView
         return $html;
     }
 
+
+    public function renderBoxes($boxes){
+        $html = '';
+        $html .= '<div class="galeries-wrapper">';
+        foreach($boxes as $box){
+
+            $html .= '<div class="galeries__galery-content">'.
+                '<figure class="galeries__galery-figure">'.
+                '<img class="galeries__galery-image"src="'.$box['image_box'].'" alt="">'.
+                '</figure> '.
+                '<div class="galeries__galery-link">'.
+                '<a href="'.$box['link_box'].'" class="galeries__galery-button" tabindex="0">'.
+                $box['name_link_box'].
+                '</a> </div> </div>';
+
+        }
+        $html .='</div>';
+
+        return $html;
+    }
+
 }
